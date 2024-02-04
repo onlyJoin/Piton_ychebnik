@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    именованные параметры передаются через - или --<br>
+    -n - сокращенное<br>
+    --name - полное<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+<br>
+    parser.add_argument('one', nargs="*")<br>
+    parser.add_argument('-n', '--name', nargs='*')<br>
+<br>
+    args = parser.parse_args()<br>
+    print(args)<br>
+    print(args.name)<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python names.py 1 --name x y z<br>
+<br>
+# линукс<br>
+# python3 names.py 1 --name x y z<br></code></p>
+
+ </body>
+</html>

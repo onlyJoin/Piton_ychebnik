@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    nargs - параметр, отвечающий за колличество передаваемых аргументов<br>
+    "*" - любое колличество (тип str)<br>
+    "+" колличество аргументов >= 1 (тип str)<br>
+    ? - неизвестно будет 0 или 1 параметр (тип str)<br>
+    числа - кол-во аргументов равно числу (передается тип int)<br>
+<br>
+    без указания nargs по умолчанию нужно будет передавать 1 аргумент, значение аргумента будет без списка<br>
+    при передаче параметра nargs будет список со значениями, независимо от колличества<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+    parser.add_argument('params', nargs='*')<br>
+    args = parser.parse_args()<br>
+<br>
+    print(args)<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python nargs.py<br>
+<br>
+# линукс<br>
+# python3 nargs.py<br></code></p>
+
+ </body>
+</html>

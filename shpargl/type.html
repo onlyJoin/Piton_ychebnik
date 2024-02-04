@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    type - тип данных, который должен быть в параметре (по умолчанию стоит str)<br>
+    например: int, str, list и даже FileType)<br>
+    """<br>
+    parser = argparse.ArgumentParser()<br>
+<br>
+    parser.add_argument('--num', type=int)<br>
+<br>
+    args = parser.parse_args()<br>
+    print(args)<br>
+    print(f'число: {args.num}')<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python type.py --num 1<br>
+<br>
+# линукс<br>
+# python3 type.py --num 1<br></code></p>
+
+ </body>
+</html>

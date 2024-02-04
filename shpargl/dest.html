@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    dest переименовывает название аргумента<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+<br>
+    parser.add_argument('--AllaMikhailovna', dest='Alla', type=int)<br>
+    parser.add_argument('--ArtemKorotkov', dest='Artem', type=int)<br>
+<br>
+    args = parser.parse_args()<br>
+    print(args)<br>
+    print(args.Artem)<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python dest.py --AllaMikhailovna 100 --ArtemKorotkov 100<br>
+<br>
+# линукс<br>
+# python3 dest.py --AllaMikhailovna 100 --ArtemKorotkov 100<br></code></p>
+
+ </body>
+</html>

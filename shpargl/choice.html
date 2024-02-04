@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+   import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    choices нужен, чтобы можно было вводить значение только из указанного в choices<br>
+    type должен соответствовать типу данных в choices (при choices=['1'] и type=int будет ошибка<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+    parser.add_argument('arg_choice', choices=[1, 2, 3, 4, 5], type=int)<br>
+    args = parser.parse_args()<br>
+<br>
+    print(f'вы мне должны {args.arg_choice}k рублей')<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python choice.py 1<br>
+# python choice.py 5<br>
+<br>
+# линукс<br>
+# python3 choice.py 1<br>
+# python3 choice.py 5<br>
+    </code></p>
+
+ </body>
+</html>

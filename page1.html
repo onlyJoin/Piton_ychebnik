@@ -36,11 +36,34 @@
             border-radius: 3px; /* Скругляем уголки */
             margin-bottom: 1em; /* Расстояние снизу */
            }
+
     </style>
 </head>
 <body>
 <h1 style="transform: translate(0.25em, 0.5em); max-width: 30em">Яндекс Лицей</h1>
-<a href="page2.html" charset=utf-8" class="btn2">Основы промышленного программирования</a>
+<form name="menu">
+    <select name="sel" onChange="linklist(document.menu.sel)">
+        <option value="#"></option>
+        <option title="Основы программирования на языке Python" value="page1.html">Основы программирования на языке
+            Python
+        </option>
+        <option title="Основы промышленного программирования" value="page2.html">Основы промышленного программирования
+        </option>
+        <option title="Шпаргалки" value="page3.html">Шпаргалки</option>
+    </select>
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+function linklist(what){
+var selectedopt=what.options[what.selectedIndex]
+if (document.getElementById && selectedopt.getAttribute("target")=="new")
+window.open(selectedopt.value)
+else
+window.location=selectedopt.value
+}
+-->
+
+</script>
 <div style="transform: translate(0em, 1.5em); max-width: 30em">
     <h1 style="transform: translate(1.5em, 0em); max-width: 30em">Основы программирования на языке Python</h1>
     <h1 style="transform: translate(2em, 0.5em); max-width: 30em">Уроки</h1>
@@ -69,10 +92,13 @@
         <li><a href="pdf_fails\a1_m22.pdf" charset=utf-8" class="btn">Функции передача параметров</a>
         <li><a href="pdf_fails\a1_m23.pdf" charset=utf-8" class="btn">Функции с переменным числом аргументов</a>
         <li><a href="pdf_fails\a1_m24.pdf" charset=utf-8" class="btn">Лямбда-функции — Функции как объект</a>
-        <li><a href="pdf_fails\a1_m25.pdf" charset=utf-8" class="btn">Обработка коллекций. Потоковый ввод sys.stdin</a>
+        <li><a href="pdf_fails\a1_m25.pdf" charset=utf-8" class="btn">Обработка коллекций. Потоковый ввод
+            sys.stdin</a>
         <li><a href="pdf_fails\a1_m26.pdf" charset=utf-8" class="btn">Библиотеки Python. Встроенные модули</a>
-        <li><a href="pdf_fails\a1_m27.pdf" charset=utf-8" class="btn">Библиотеки Python. Работа с графическими файлами</a>
-        <li><a href="pdf_fails\a1_m28.pdf" charset=utf-8" class="btn">Библиотеки Python. Работа с графическими файлами и
+        <li><a href="pdf_fails\a1_m27.pdf" charset=utf-8" class="btn">Библиотеки Python. Работа с графическими
+            файлами</a>
+        <li><a href="pdf_fails\a1_m28.pdf" charset=utf-8" class="btn">Библиотеки Python. Работа с графическими файлами
+            и
             звуком</a>
         <li><a href="pdf_fails\a1_m29.pdf" charset=utf-8" class="btn">Библиотеки Python. Морфология»</a>
         <li><a href="pdf_fails\a1_m30.pdf" charset=utf-8" class="btn">Библиотеки Python. Работа с документами</a>
@@ -81,9 +107,11 @@
         <li><a href="pdf_fails\a1_m33.pdf" charset=utf-8" class="btn">Введение в ООП. Определение операторов»</a>
         <li><a href="pdf_fails\a1_m34.pdf" charset=utf-8" class="btn">Введение в ООП. Наследование. Часть 1</a>
         <li><a href="pdf_fails\a1_m35.pdf" charset=utf-8" class="btn">Введение в ООП. Наследование. Часть 2</a>
-        <li><a href="pdf_fails\a1_m36.pdf" charset=utf-8" class="btn">Введение в ООП. Проектирование и разработка классов.
+        <li><a href="pdf_fails\a1_m36.pdf" charset=utf-8" class="btn">Введение в ООП. Проектирование и разработка
+            классов.
             Часть № 1</a>
-        <li><a href="pdf_fails\a1_m37.pdf" charset=utf-8" class="btn">Введение в ООП. Проектирование и разработка классов.
+        <li><a href="pdf_fails\a1_m37.pdf" charset=utf-8" class="btn">Введение в ООП. Проектирование и разработка
+            классов.
             Часть № 2</a>
         <li><a href="pdf_fails\a1_m38.pdf" charset=utf-8" class="btn">Библиотеки Python. Numpy</a>
         <li><a href="pdf_fails\a1_m39.pdf" charset=utf-8" class="btn">Рекурсия</a>

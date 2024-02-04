@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    metavar позволяет изменить отображение аргумента при использовании help<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+<br>
+    parser.add_argument('sahar', nargs=1, help='sahar принимает 1 аргумент', metavar='metavarское название')<br>
+    args = parser.parse_args()<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python metavar.py -h<br>
+<br>
+# линукс<br>
+# python3 metavar.py -h<br></code></p>
+
+ </body>
+</html>

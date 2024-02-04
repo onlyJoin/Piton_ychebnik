@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import schedule<br>
+<br>
+<br>
+# второй способ<br>
+def print_message2(text):<br>
+    global n<br>
+    print(f"{n} {text}")<br>
+    n += 1<br>
+<br>
+<br>
+n = 0<br>
+schedule.every(1).seconds.do(print_message2, text='ку-ку...')<br>
+<br>
+while True:  # цикл завершится<br>
+    schedule.run_pending()<br>
+    if n == 5:<br>
+        break<br></code></p>
+
+ </body>
+</html>

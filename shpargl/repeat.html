@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import sys<br>
+<br>
+<br>
+def print_help(msg=""):<br>
+    """функция печатает правила использования и ошибку, если она есть"""<br>
+<br>
+    print(f"Usage: {sys.argv[0]} [-h] [--base BASE] int [int ...]\n{msg}")<br>
+    quit()<br>
+<br>
+<br>
+def main(args):<br>
+    print(args, 'all_args')<br>
+    integers = []<br>
+    base = 2  # по умолчанию<br>
+<br>
+    while args:<br>
+        arg = args.pop(0)<br>
+        if arg == '-h':  # вывод подсказки<br>
+            print_help()<br>
+<br>
+        elif arg == '--base':  # изменить систему счисления<br>
+            try:<br>
+                base = int(args.pop(0))<br>
+            except ValueError:<br>
+                print_help(f"invalid base value: {arg}")<br>
+<br>
+        else:  # добавляем в список числа<br>
+            integers.append(arg)<br>
+<br>
+    if not integers:  # список пустой<br>
+        print_help('No int args')<br>
+<br>
+    try:<br>
+        return list(map(lambda x: int(x, base), integers))  # преобразования<br>
+    except ValueError as e:<br>
+        print_help(f"invalid value: {e}")<br>
+<br>
+<br>
+print(main(sys.argv[1:]))<br>
+<br>
+# винда<br>
+# python repeat.py --base 3 0 1 10 11<br>
+# python repeat.py --base 3 140 1 1010<br>
+# python repeat.py<br>
+<br>
+# линукс<br>
+# python3 repeat.py --base 3 0 1 10 11<br>
+# python3 repeat.py --base 3 140 1 1010<br>
+# python3 repeat.py<br></code></p>
+
+ </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+<br>
+def main():<br>
+    """<br>
+    required нужен для указания обязательности передачи аргумента<br>
+    True - обязательно передавать<br>
+    False - необязательно передавать<br>
+    """<br>
+<br>
+    parser = argparse.ArgumentParser()<br>
+<br>
+    parser.add_argument('--test', required=True, nargs='*')<br>
+<br>
+    args = parser.parse_args()<br>
+    print(args)<br>
+<br>
+<br>
+main()<br>
+<br>
+# винда<br>
+# python required.py --test 50<br>
+<br>
+# линукс<br>
+# python3 required.py --test 50<br></code></p>
+
+ </body>
+</html>

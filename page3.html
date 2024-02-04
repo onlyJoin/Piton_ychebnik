@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Учебник Яндекса</title>
+    <style>
+        #links{list-style: none; margin:0}
+        #links li a:hover{background: #D5D5D5}
+
+        .pdfobject-container { height: 500px;}
+        .pdfobject { border: 1px solid #666; }
+        .btn {
+            width: 50em; /* Ширина кнопки */
+            height: 30pm; /* Высота кнопки */
+            border: 2px solid #000000; /* Параметры рамки */
+            font:16px/25px "v_CCAdamKubert", sans-serif; /* Размер текста */
+            display: inline-block; /* Строчно-блочный элемент */
+            background: #ffffff; /* Серый цвет фона */
+            color: #000; /* Белый цвет текста */
+            text-decoration: none;
+            padding: 1rem 1.5rem; /* Поля вокруг текста */
+            border-radius: 3px; /* Скругляем уголки */
+            margin-bottom: 1em; /* Расстояние снизу */
+           }
+        .btn2 {
+            width: 20em; /* Ширина кнопки */
+            height: 30pm; /* Высота кнопки */
+            border: 2px solid #000000; /* Параметры рамки */
+            transform: translate(0.25em, 0.5em);
+            max-width: 30em"
+            font:16px/25px "v_CCAdamKubert", sans-serif; /* Размер текста */
+            display: inline-block; /* Строчно-блочный элемент */
+            background: #ffffff; /* Серый цвет фона */
+            color: #000; /* Белый цвет текста */
+            text-decoration: none;
+            border-radius: 3px; /* Скругляем уголки */
+            margin-bottom: 1em; /* Расстояние снизу */
+           }
+    </style>
+</head>
+<body>
+<h1 style="transform: translate(0.25em, 0.5em); max-width: 30em">Яндекс Лицей</h1>
+<form name="menu">
+    <select name="sel" onChange="linklist(document.menu.sel)">
+        <option value="#"></option>
+        <option title="Основы программирования на языке Python" value="page1.html">Основы программирования на языке Python</option>
+        <option title="Основы промышленного программирования" value="page2.html">Основы промышленного программирования</option>
+        <option title="Шпаргалки" value="page3.html">Шпаргалки</option>
+    </select>
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+function linklist(what){
+var selectedopt=what.options[what.selectedIndex]
+if (document.getElementById && selectedopt.getAttribute("target")=="new")
+window.open(selectedopt.value)
+else
+window.location=selectedopt.value
+}
+-->
+</script>
+<div style="transform: translate(0em, 1.5em); max-width: 30em">
+    <h1 style="transform: translate(1.5em, 0em); max-width: 30em">Шпаргалки</h1>
+    <h1 style="transform: translate(2em, 0.5em); max-width: 30em">Уроки</h1>
+    <ul id="links" style="transform: translate(0em, 1em); max-width: 30em">
+        <li><a href="shpargl\action.html" charset=utf-8" class="btn">action</a>
+        <li><a href="shpargl\choice.html" charset=utf-8" class="btn">choice</a>
+        <li><a href="shpargl\code2.html" charset=utf-8" class="btn">code2</a>
+        <li><a href="shpargl\const.html" charset=utf-8" class="btn">const</a>
+        <li><a href="shpargl\default.html" charset=utf-8" class="btn">default</a>
+        <li><a href="shpargl\dest.html" charset=utf-8" class="btn">dest</a>
+        <li><a href="shpargl\first.html" charset=utf-8" class="btn">first</a>
+        <li><a href="shpargl\help.html" charset=utf-8" class="btn">help</a>
+        <li><a href="shpargl\metavae.html" charset=utf-8" class="btn">metavae</a>
+        <li><a href="shpargl\names.html" charset=utf-8" class="btn">names</a>
+        <li><a href="shpargl\nargs.html" charset=utf-8" class="btn">nargs</a>
+        <li><a href="shpargl\one_args_1.html" charset=utf-8" class="btn">one_args_1</a>
+        <li><a href="shpargl\repeat.html" charset=utf-8" class="btn">repeat</a>
+        <li><a href="shpargl\required.html" charset=utf-8" class="btn">required</a>
+        <li><a href="shpargl\second.html" charset=utf-8" class="btn">second</a>
+        <li><a href="shpargl\sequence.html" charset=utf-8" class="btn">sequence</a>
+        <li><a href="shpargl\shedule.html" charset=utf-8" class="btn">shedule</a>
+        <li><a href="shpargl\shedule2.html" charset=utf-8" class="btn">shedule2</a>
+        <li><a href="shpargl\shedule3.html" charset=utf-8" class="btn">shedule3</a>
+        <li><a href="shpargl\type.html" charset=utf-8" class="btn">type</a>
+        <li><a href="shpargl\type2_with_file.html" charset=utf-8" class="btn">type2_with_file</a>
+    </ul>
+</div>
+</body>
+<html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <p><code>
+    import argparse<br>
+<br>
+parser = argparse.ArgumentParser(description="convert integers to decimal system")<br>
+<br>
+parser.add_argument('integers', nargs='+', type=str, help='integers to be converted')<br>
+parser.add_argument('--base', default=2, type=int, help='default numeric system')<br>
+<br>
+args = parser.parse_args()<br>
+<br>
+s = " ".join(map(lambda x: str(int(x, args.base)), args.integers))<br>
+<br>
+print(f'result: {s}')<br>
+<br>
+# винда<br>
+# python code2.py 1 2 111 211 --base 3<br>
+<br>
+# линукс<br>
+# python3 code2.py 1 2 111 211 --base 3<br></code></p>
+
+ </body>
+</html>
