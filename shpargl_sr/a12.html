@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import argparse
+
+"""
+
+action - то, как стоит обработать аргумент
+
+наиболее часто используемые:
+
+
+
+store - значение по умолчанию, без передачи будет None, с передачей - то, которое передали
+
+store_true - если не передали ничего, то False (флаг)
+
+store_false - если не передали ничего, то True (флаг)
+
+store_const - установить значение константу, если передали аргумент
+
+"""
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--check', action='store', dest='arg')
+
+args = parser.parse_args()
+
+arg = args.arg
+print(arg)
+
+
+
+# python main.py => None
+
+# python main.py --check 10 => 10
+
+</code></pre>
+</body>
+</html>

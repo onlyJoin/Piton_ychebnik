@@ -5,21 +5,21 @@
     <title>Тег CODE</title>
 </head>
 <body>
-<pre><code># '+' - должно быть 1 или больше
+<pre><code># '?' - может быть, а может не быть
 
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("args", nargs='+')
+parser.add_argument("args", nargs='?')
 args = parser.parse_args()
 
 print(args.args)
 
 
 
-# python main.py 'one' 'two' 3 4 17 => ['one', 'two', '3', '4', '17']
+# python main.py 'one' => 'one'
 
-# python main.py  => Error
+# python main.py  => None
 
 </code></pre>
 </body>

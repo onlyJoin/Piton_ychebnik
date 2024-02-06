@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("int_args", nargs='*', default=0)  # default задает значение по умолчанию
+args = parser.parse_args()
+
+print(args.int_args)
+
+
+
+# python main.py 1 => ['1']
+
+# python main.py => 0
+
+</code></pre>
+</body>
+</html>

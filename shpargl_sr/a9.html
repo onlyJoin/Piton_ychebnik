@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("arg1")                           # собирает первую строку
+parser.add_argument("int_args", type=int, nargs='*')  # собирает все числа
+parser.add_argument("arg2")                           # собирает последнюю строку
+args = parser.parse_args()
+
+print(args.arg1, args.arg2, args.int_args)
+
+
+# python main.py 'one'     3 4   17 'rg' => one rg [3, 4, 17]
+
+</code></pre>
+</body>
+</html>

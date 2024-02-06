@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import argparse
+
+"""
+
+store_const устанавливает значение в аргумент, которое находится в const, по умолчанию None
+
+"""
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--check', action='store_const', const='1', dest='argg')
+
+args = parser.parse_args()
+
+argg = args.argg
+print(argg)
+
+
+
+# python main.py => None
+
+# python main.py --check => 1
+
+</code></pre>
+</body>
+</html>
