@@ -36,6 +36,7 @@
             border-radius: 3px; /* Скругляем уголки */
             margin-bottom: 1em; /* Расстояние снизу */
            }
+
     </style>
 </head>
 <body>
@@ -43,8 +44,11 @@
 <form name="menu">
     <select name="sel" onChange="linklist(document.menu.sel)">
         <option value="#"></option>
-        <option title="Основы программирования на языке Python" value="page1.html">Основы программирования на языке Python</option>
-        <option title="Основы промышленного программирования" value="page2.html">Основы промышленного программирования</option>
+        <option title="Основы программирования на языке Python" value="page1.html">Основы программирования на языке
+            Python
+        </option>
+        <option title="Основы промышленного программирования" value="page2.html">Основы промышленного программирования
+        </option>
         <option title="Шпаргалки" value="page3.html">Шпаргалки</option>
         <option title="Шпаргалки к ср" value="page4.html">Шпаргалки к ср</option>
     </select>
@@ -59,33 +63,17 @@ else
 window.location=selectedopt.value
 }
 -->
+
 </script>
 <div style="transform: translate(0em, 1.5em); max-width: 30em">
-    <h1 style="transform: translate(1.5em, 0em); max-width: 30em">Шпаргалки</h1>
+    <h1 style="transform: translate(1.5em, 0em); max-width: 30em">Шпаргалки на ср</h1>
     <h1 style="transform: translate(2em, 0.5em); max-width: 30em">Уроки</h1>
     <ul id="links" style="transform: translate(0em, 1em); max-width: 30em">
-        <li><a href="shpargl\action.html" charset=utf-8" class="btn">action</a>
-        <li><a href="shpargl\choice.html" charset=utf-8" class="btn">choice</a>
-        <li><a href="shpargl\code2.html" charset=utf-8" class="btn">code2</a>
-        <li><a href="shpargl\const.html" charset=utf-8" class="btn">const</a>
-        <li><a href="shpargl\default.html" charset=utf-8" class="btn">default</a>
-        <li><a href="shpargl\dest.html" charset=utf-8" class="btn">dest</a>
-        <li><a href="shpargl\help.html" charset=utf-8" class="btn">help</a>
-        <li><a href="shpargl\metavar.html" charset=utf-8" class="btn">metavar</a>
-        <li><a href="shpargl\names.html" charset=utf-8" class="btn">names</a>
-        <li><a href="shpargl\nargs.html" charset=utf-8" class="btn">nargs</a>
-        <li><a href="shpargl\one_args_1.html" charset=utf-8" class="btn">one_args_1</a>
-        <li><a href="shpargl\repeat.html" charset=utf-8" class="btn">repeat</a>
-        <li><a href="shpargl\required.html" charset=utf-8" class="btn">required</a>
-        <li><a href="shpargl\shedule.html" charset=utf-8" class="btn">shedule</a>
-        <li><a href="shpargl\shedule2.html" charset=utf-8" class="btn">shedule2</a>
-        <li><a href="shpargl\shedule3.html" charset=utf-8" class="btn">shedule3</a>
-        <li><a href="shpargl\type.html" charset=utf-8" class="btn">type</a>
-        <li><a href="shpargl\type2_with_file.html" charset=utf-8" class="btn">type2_with_file</a>
-        <li><a href="shpargl\regulation_music.html" charset=utf-8" class="btn">regulation_music</a>
-        <li><a href="https://tech.yandex.ru/maps/doc/staticapi/1.x/dg/concepts/input_params-docpage/" charset=utf-8" class="btn">Документация для Static API</a>
-        <li><a href="https://tech.yandex.ru/maps/doc/geocoder/desc/concepts/About-docpage/" charset=utf-8" class="btn">Документация для geocoder</a>
-        <li><a href="shpargl\sql_zap.html" charset=utf-8" class="btn">Запросы SQL</a>
+        <li><a href="shpargl_sr\a1.html" charset=utf-8" class="btn">Обработка запроса командной строки sys</a>
+        <li><a href="shpargl_sr\choice.html" charset=utf-8" class="btn">Запись в json файл</a>
+        <li><a href="shpargl_sr\code2.html" charset=utf-8" class="btn">Словарь из json</a>
+        <li><a href="shpargl_sr\const.html" charset=utf-8" class="btn">Из строки сделать словарь</a>
+        <li><a href="shpargl_sr\default.html" charset=utf-8" class="btn">default</a>
     </ul>
 </div>
 </body>

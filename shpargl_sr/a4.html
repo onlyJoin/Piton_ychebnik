@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег CODE</title>
+ </head>
+ <body>
+  <pre><code># из строки сделать словарь
+import json
+
+s = '''{
+    "name": "Barsik",
+    "age": 7,
+    "meals": [
+        "Wiskas",
+        "Royal Canin",
+        "Purina",
+        "Hills",
+        "Brit Care"
+    ]
+} '''
+e = json.loads(s)
+print(e)
+# result: {'name': 'Barsik', 'age': 7, 'meals': ['Wiskas', 'Royal Canin', 'Purina', 'Hills', 'Brit Care']}</code></pre>
+
+ </body>
+</html>
