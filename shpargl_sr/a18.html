@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import csv
+
+with open('csv.csv', encoding="utf8") as csvfile:
+    reader = csv.reader(csvfile, delimiter=';', quotechar='"')  # delimiter - разделитель, quotechar - кавычки
+    for index, row in enumerate(reader):
+        print(row)
+
+
+# "lastname";"firstname";"class_number";"class_letter"
+# "Иванов";"Пётр";9;"А"
+# "Кузнецов";"Алексей";9;"В"
+# "Меньшова";"Алиса";9;"А"
+# "Иванова";"Татьяна";9;"Б"
+#
+# =>
+#
+# ['lastname', 'firstname', 'class_number', 'class_letter']
+# ['Иванов', 'Пётр', '9', 'А']
+# ['Кузнецов', 'Алексей', '9', 'В']
+# ['Меньшова', 'Алиса', '9', 'А']
+# ['Иванова', 'Татьяна', '9', 'Б']
+
+</code></pre>
+
+</body>
+</html>
