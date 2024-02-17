@@ -16,7 +16,7 @@ m = a['host']  # порт сервера
 b = a['color'].split(', ')
 
 c = []
-response = requests.get(f'{n}:{m}').json()
+response = requests.get(f'http://{n}:{m}').json()
 
 for i in response:
     f = True
