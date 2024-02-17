@@ -21,7 +21,7 @@ args = parser.parse_args()
 cut = args.cut
 rest = args.rest
 
-response = requests.get(f'{args.port}:{args.host}').json()
+response = requests.get(f'http://{args.port}:{args.host}').json()
 
 a = []
 for i in response:
