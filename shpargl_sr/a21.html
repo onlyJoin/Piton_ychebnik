@@ -11,11 +11,11 @@ import requests
 with open('bouquet.json') as js_file:
     a = json.load(js_file)
 
-n = a['port']  # строка сервера
-m = a['host']  # порт сервера
+n = a['host']  # строка сервера
+m = a['port']  # порт сервера
 b = a['color'].split(', ')
 
-c = []
+c = set()
 response = requests.get(f'http://{n}:{m}').json()
 
 for i in response:
@@ -25,7 +25,8 @@ for i in response:
             f = False
     if f:
         c.add(i)
-print(*sorted(c, reverse=True))
+print(', '.join(sorted(c, reverse=True)))
+
 </code></pre>
 
 </body>
