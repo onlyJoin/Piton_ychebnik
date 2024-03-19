@@ -5,27 +5,10 @@
     <title>Тег CODE</title>
 </head>
 <body>
-<pre><code>import json
-import requests
-
-with open('bouquet.json') as js_file:
-    a = json.load(js_file)
-
-n = a['host']  # строка сервера
-m = a['port']  # порт сервера
-b = a['color'].split(', ')
-
-c = set()
-response = requests.get(f'http://{n}:{m}').json()
-
-for i in response:
-    f = True
-    for j in b:
-        if j not in response[i]:
-            f = False
-    if f:
-        c.add(i)
-print(', '.join(sorted(c, reverse=True)))
+<pre><code>f = open("../txtt.txt", encoding="utf8")
+for i in range(7):
+    print(f.readline(), end="")
+f.close()
 
 </code></pre>
 

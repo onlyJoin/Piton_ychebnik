@@ -5,44 +5,32 @@
     <title>Тег CODE</title>
 </head>
 <body>
-<pre><code>import argparse
-import json
+<pre><code># Один из способов записать информацию в файл — метод write.
+# Если мы хотим сделать запись в середину файла,
+# должны сначала спозиционироваться на место предполагаемой записи (метод seek),
+# а уже потом записывать (метод write).
+# Метод write возвращает количество записанных символов.
 
-import requests
+f = open("../txtt.txt", 'w')
+print(f.write('123\n456'))
+print(f.seek(3))
+print(f.write('34352'))
+f.close()
+f = open("../txtt.txt", 'r')
+print(f.read())
+f.close()
 
-parser = argparse.ArgumentParser()
-parser.add_argument("port")
-parser.add_argument("host")
-parser.add_argument("args", nargs='*')
-parser.add_argument("--cut", dest='cut', default=4, type=int)
-parser.add_argument("--rest", dest='rest', action='store_true')
-args = parser.parse_args()
+# txtt.txt:  agfsahgtrwh
+#
+# =>
+#
+# print:
+# 7
+# 3
+# 5
+# 12334352
+# txtt.txt:  12334352
 
-cut = args.cut
-rest = args.rest
-
-response = requests.get(f'http://{args.port}:{args.host}').json()
-
-a = []
-for i in response:
-    if i in args.args:
-        for j in range(len(response[i])):
-            if response[i][j] % cut == 0:
-                response[i][j] = response[i][j] // 10
-            elif rest:
-                response[i][j] = response[i][j] + rest % 5 + rest % 7
-    sr = sum(response[i]) / len(response[i])
-    b = list([j for j in response[i] if j > sr])
-    a.append({
-        'job': i,
-        'diff': max(response[i]) - min(response[i]),
-        'number': len(b)
-    })
-
-a = sorted(a, key=lambda x: x['job'])
-
-with open('good_day.json', mode='w') as js_file:
-    json.dump(a, js_file, indent=2, ensure_ascii=True)
 </code></pre>
 
 </body>

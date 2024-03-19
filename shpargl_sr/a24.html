@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code># Импорт библиотеки
+import sqlite3
+
+# Подключение к БД
+con = sqlite3.connect("films_db.sqlite")
+
+# Создание курсора
+cur = con.cursor()
+
+# Выполнение запроса и получение всех результатов
+result = cur.execute("""SELECT * FROM films
+            WHERE year = 2010""").fetchall()
+
+# Вывод результатов на экран
+for elem in result:
+    print(elem)
+
+con.close()
+
+# (248, 'Алиса в стране чудес', 2010, 13, 201)
+# (4382, 'Железный человек 2', 2010, 11, 287)
+# (9138, 'Ноттингем', 2010, 11, 188)
+# (15495, 'Утомленные солнцем: Предстояние', 2010, 2, 139)
+
+</code></pre>
+
+</body>
+</html>

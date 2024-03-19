@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>* - обозначает, что нам необходимо получить все поля
+
+AND - и
+OR - или
+NOT - нет
+IN - в списке:
+
+SELECT title, duration FROM Films
+WHERE duration IN (45, 90)
+
+BETWEEN — проверяет, попадает ли заданное значение в диапазон (включая границы):
+
+SELECT * FROM Films
+    WHERE (year > 2005) AND duration BETWEEN 45 AND 60
+
+LIKE - позволяет проверить, насколько похожа та или иная строка на заданный шаблон:
+
+SELECT * FROM Films
+    WHERE title like 'А_к%'
+
+% — обозначает любое количество, в том числе нулевое, любых символов
+_ — обозначает один любой символ
+
+DISTINCT - возможность избавиться от повторов:
+
+SELECT DISTINCT year FROM Films
+
+ORDER BY — результаты будут выведены в отсортированном виде по заданному полю или нескольким полям, а в условии может быть вложенный запрос:
+
+SELECT
+  Track.Name as TrackName,
+  Genre.Name as GenreName,
+  Album.Title as AlbumTitle,
+  Artist.Name
+FROM
+  Track
+LEFT JOIN Genre ON Track.GenreId = Genre.GenreId
+LEFT JOIN Album ON Track.AlbumId = Album.AlbumId
+LEFT JOIN Artist ON Album.ArtistId = Artist.ArtistId
+ORDER BY TrackName;
+
+
+</code></pre>
+
+</body>
+</html>

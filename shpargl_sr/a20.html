@@ -5,26 +5,39 @@
     <title>Тег CODE</title>
 </head>
 <body>
-<pre><code>import csv
-import json
+<pre><code>from flask import Flask, jsonify
+import argparse
+import csv
 
-a = []
-with open('houses.csv', encoding="utf8") as csvfile:
-    reader = csv.reader(csvfile, delimiter=';', quotechar='"')  # delimiter - разделитель, quotechar - кавычки
-    f = True
-    for index, row in enumerate(reader):
-        if f:
-            f = False
-        else:
-            if int(row[2]) != int(row[3]):
-                a.append({
-                    "adress": row[1],
-                    "difference": abs(int(row[2]) - int(row[3]))
-                })
+app = Flask(__name__)
 
-with open('unusual.json', mode='w') as js_file:
-    json.dump(a, js_file, indent=2, ensure_ascii=True)
 
+@app.route("/types/")
+def index():
+    global name
+    with open(name, encoding="utf8") as csvfile:
+        reader = csv.reader(csvfile, delimiter=';', quotechar='"')
+        d = {}
+        for id, creature_type, habitat, color, height, feeds_on in list(reader)[1:]:
+            data = {}
+            if creature_type in d:
+                data = d[creature_type]
+            data['colors'] = sorted(list(set(data.get('colors', []) + [color])))
+            data['feeds'] = sorted(list(set(data.get('feeds', []) + [feeds_on])))
+            data['habitats'] = sorted(list(set(data.get('habitats', []) + [habitat])))
+            data['heights'] = sorted(list(set(data.get('heights', []) + [height])))
+            d[creature_type] = data
+    return jsonify(d)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host")
+    parser.add_argument("--port", type=int)
+    parser.add_argument("--file")
+    args = parser.parse_args()
+    name = args.file
+    app.run(host=args.host, port=args.port)
 </code></pre>
 
 </body>
