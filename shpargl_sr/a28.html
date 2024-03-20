@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег CODE</title>
+</head>
+<body>
+<pre><code>import csv
+import json
+
+a = {}
+
+with open('csv.csv', encoding="utf8") as csvfile:
+    reader = csv.reader(csvfile, delimiter=';', quotechar='"')
+    b = []
+    c = set()
+    for index, row in enumerate(reader):
+        if index != 0:
+            if str(row) not in c:
+                c.add(str(row))
+                b.append(row)
+
+    for i in sorted(b):
+        a[i[0]] = i[3]
+
+    with open('js.json', mode='w') as js_file:
+        json.dump(a, js_file, indent=2, ensure_ascii=True)
+
+</code></pre>
+
+</body>
+</html>
