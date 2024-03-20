@@ -5,29 +5,39 @@
     <title>Тег CODE</title>
 </head>
 <body>
-<pre><code># Импорт библиотеки
+<pre><code>import csv
 import sqlite3
 
-# Подключение к БД
-con = sqlite3.connect("films_db.sqlite")
+con = sqlite3.connect('films_db.sqlite')
 
-# Создание курсора
 cur = con.cursor()
 
-# Выполнение запроса и получение всех результатов
-result = cur.execute("""SELECT * FROM films
-            WHERE year = 2010""").fetchall()
+result = cur.execute("""SELECT
+    films.title,
+    films.year,
+    films.duration,
+    genres.title
+FROM
+    films
 
-# Вывод результатов на экран
-for elem in result:
-    print(elem)
+INNER JOIN genres
+    ON films.genre = genres.id
+
+WHERE genres.title='комедия' AND films.title LIKE 'Я%'""").fetchall()
 
 con.close()
 
-# (248, 'Алиса в стране чудес', 2010, 13, 201)
-# (4382, 'Железный человек 2', 2010, 11, 287)
-# (9138, 'Ноттингем', 2010, 11, 188)
-# (15495, 'Утомленные солнцем: Предстояние', 2010, 2, 139)
+data = []
+for i in result:
+    data.append({'title': i[0], 'year': i[1], 'duration': i[2], 'genre': i[3]})
+
+with open('csv.csv', 'w', newline='', encoding="utf8") as f:
+    writer = csv.DictWriter(
+        f, fieldnames=list(data[0].keys()),
+        delimiter=';', quoting=csv.QUOTE_NONNUMERIC, quotechar="'")
+    writer.writeheader()
+    for d in data:
+        writer.writerow(d)
 
 </code></pre>
 
